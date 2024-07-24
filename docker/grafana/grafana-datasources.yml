@@ -26,6 +26,12 @@ datasources:
     isDefault: false
     version: 1
     editable: false
+    jsonData:
+      derivedFields:
+        - datasourceUid: tempo
+          matcherRegex: '"traceid":"(\w+)"'
+          url: '$${__value.raw}'
+          name: traceId
   - name: Tempo
     type: tempo
     access: proxy
