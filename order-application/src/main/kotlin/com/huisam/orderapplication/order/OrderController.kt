@@ -1,4 +1,4 @@
-package com.huisam.springobservability.order
+package com.huisam.orderapplication.order
 
 import org.slf4j.LoggerFactory
 import org.springframework.data.repository.findByIdOrNull
@@ -13,7 +13,7 @@ import org.springframework.web.server.ResponseStatusException
 @RestController
 @RequestMapping("/api/v1/orders")
 class OrderController(
-    private val repository: OrderRepository
+    private val orderRepository: OrderRepository
 ) {
     private val logger = LoggerFactory.getLogger(OrderController::class.java)
 
@@ -21,7 +21,7 @@ class OrderController(
     fun getOrder(@PathVariable id: Long): ResponseEntity<Order> {
         logger.info("Get order requested by id $id")
 
-        val order = repository.findByIdOrNull(id) ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
+        val order = orderRepository.findByIdOrNull(id) ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
 
         return ResponseEntity.ok(order)
     }

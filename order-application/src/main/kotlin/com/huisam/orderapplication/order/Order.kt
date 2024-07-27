@@ -1,4 +1,4 @@
-package com.huisam.springobservability.order
+package com.huisam.orderapplication.order
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -12,8 +12,9 @@ import java.time.ZonedDateTime
 class Order(
     @Id
     val id: Long,
-    @Column(name = "customer_id")
-    val customerId: Long,
+
+    @Column(name = "product_id")
+    val productId: Long,
 
     @Column(name = "order_date")
     val orderDate: ZonedDateTime,

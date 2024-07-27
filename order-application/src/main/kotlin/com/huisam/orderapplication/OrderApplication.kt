@@ -1,11 +1,11 @@
-package com.huisam.springobservability
+package com.huisam.orderapplication
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SpringObservabilityApplication
+class OrderApplication
 
 fun main(args: Array<String>) {
-    runApplication<SpringObservabilityApplication>(*args)
+    runApplication<OrderApplication>(*args)
 }

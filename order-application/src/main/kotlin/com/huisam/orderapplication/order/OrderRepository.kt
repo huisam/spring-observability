@@ -1,4 +1,4 @@
-package com.huisam.springobservability.order
+package com.huisam.orderapplication.order
 
 import org.springframework.data.repository.CrudRepository
 
