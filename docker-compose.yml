@@ -102,7 +102,7 @@ services:
     image: postgres:latest
     restart: always
     environment:
-      POSTGRES_DB: opentelemetry
+      POSTGRES_DB: observability
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
     ports:
