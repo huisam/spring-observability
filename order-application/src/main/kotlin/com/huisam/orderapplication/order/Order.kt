@@ -1,9 +1,6 @@
 package com.huisam.orderapplication.order
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 import java.math.BigDecimal
 import java.time.ZonedDateTime
 
@@ -11,7 +8,8 @@ import java.time.ZonedDateTime
 @Table(name = "orders")
 class Order(
     @Id
-    val id: Long,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? = null,
 
     @Column(name = "product_id")
     val productId: Long,
