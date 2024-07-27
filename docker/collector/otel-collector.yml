@@ -18,15 +18,6 @@ exporters:
     endpoint: "0.0.0.0:8889"
     enable_open_metrics: true
 
-  otlp/jaeger:
-    endpoint: "http://jaeger:4317"
-    tls:
-      insecure: true
-
-  zipkin:
-    endpoint: http://zipkin:9411/api/v2/spans
-    format: proto
-
   otlp/tempo:
     endpoint: "http://tempo:4317"
     tls:
@@ -44,7 +35,7 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp/jaeger,zipkin,otlp/tempo]
+      exporters: [otlp/tempo]
     logs:
       receivers: [otlp]
       processors: [batch]

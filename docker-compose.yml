@@ -1,6 +1,7 @@
 services:
   order-application:
     image: order-application:0.0.1-SNAPSHOT
+    container_name: order-application
     environment:
       OTEL_SERVICE_NAME: "order-application"
       OTEL_RESOURCE_ATTRIBUTES: "service=order-application,env=dev"
@@ -14,6 +15,7 @@ services:
 
   product-application:
     image: product-application:0.0.1-SNAPSHOT
+    container_name: product-application
     environment:
       OTEL_SERVICE_NAME: "product-application"
       OTEL_RESOURCE_ATTRIBUTES: "service=product-application,env=dev"
