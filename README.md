@@ -39,8 +39,8 @@ docker compose up -d
 
 ## Test 
 
-There is an example file for http test file.  
-It is located on the [http folder](http)  
+There is an test simulation file for http API.  
+It is located on the [http folder](http). If you test from using http file, you can easy to make the trace data on tempo.
 
 ```http request
 ### get order
