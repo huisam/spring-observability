@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgres:5432/observability
+    url: jdbc:postgresql://postgres-order:5432/order
     username: username
     password: password
 

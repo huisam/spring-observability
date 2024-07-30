@@ -10,7 +10,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - postgres
+      - postgres-order
       - collector
 
   product-application:
@@ -24,7 +24,7 @@ services:
     ports:
       - "8081:8080"
     depends_on:
-      - postgres
+      - postgres-product
       - collector
 
   collector:
@@ -89,13 +89,24 @@ services:
       - loki
       - tempo
 
-  postgres:
-    container_name: postgres
+  postgres-order:
+    container_name: postgres-order
     image: postgres:latest
     restart: always
     environment:
-      POSTGRES_DB: observability
+      POSTGRES_DB: order
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
+
+  postgres-product:
+    container_name: postgres-product
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: product
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
