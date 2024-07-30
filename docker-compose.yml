@@ -6,7 +6,7 @@ services:
       OTEL_SERVICE_NAME: "order-application"
       OTEL_RESOURCE_ATTRIBUTES: "service=order-application,env=dev"
       OTEL_EXPORTER_OTLP_ENDPOINT: "http://collector:4317"
-      OTEL_LOGS_EXPORTER: "otlp"
+      OTEL_EXPORTER_OTLP_PROTOCOL: grpc
     ports:
       - "8080:8080"
     depends_on:
@@ -20,7 +20,7 @@ services:
       OTEL_SERVICE_NAME: "product-application"
       OTEL_RESOURCE_ATTRIBUTES: "service=product-application,env=dev"
       OTEL_EXPORTER_OTLP_ENDPOINT: "http://collector:4317"
-      OTEL_LOGS_EXPORTER: "otlp"
+      OTEL_EXPORTER_OTLP_PROTOCOL: grpc
     ports:
       - "8081:8080"
     depends_on:
@@ -29,15 +29,17 @@ services:
 
   collector:
     container_name: collector
-    image: otel/opentelemetry-collector-contrib:0.91.0
+    image: otel/opentelemetry-collector-contrib:0.105.0
     command:
       - --config=/etc/otelcol-contrib/otel-collector.yml
     volumes:
       - ./docker/collector/otel-collector.yml:/etc/otelcol-contrib/otel-collector.yml
     restart: always
     ports:
-      - "4317" # OTLP gRPC receiver
-      - "8889" # Prometheus exporter metrics
+      - 4317:4317 # OTLP gRPC receiver
+      - 4318:4318 # OTLP HTTP receiver
+      - 8888:8888 # Prometheus metrics exposed by the Collector
+      - 8889:8889 # Prometheus exporter metrics
     depends_on:
       - loki
       - tempo
