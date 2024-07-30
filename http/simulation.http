@@ -1,0 +1,13 @@
+### get order
+GET http://localhost:8080/api/v1/orders/1
+
+### get product
+GET http://localhost:8081/api/v1/products/1
+
+### place order
+POST http://localhost:8080/api/v1/orders/place-order
+Content-Type: application/json
+
+{
+  "productId": 1
+}
