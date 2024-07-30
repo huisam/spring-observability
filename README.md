@@ -8,7 +8,7 @@ A demo for `observability` on spring boot framework with opentelemetry
 
 ## Introduce
 
-To realize the `observability` of the system, in this repository will use the [opentelemetry](https://opentelemetry.io/docs/what-is-opentelemetry/) open source.  
+To simulate the `observability` of the system, in this repository will use the [opentelemetry](https://opentelemetry.io/docs/what-is-opentelemetry/) open source.  
 
 The description of the `observability` is written on the opentelemetry
 > Observability lets you understand a system from the outside by letting you ask questions about that system without knowing its inner workings.
@@ -20,7 +20,7 @@ Also you can create `correlations` between instrumented data.
     <img src="img/correlation.png" text-align="center" />
 </div>
 
-Grafana can create interactive links for Explore visualizations to run queries related to presented data by setting up `correlations`.
+Grafana can create interactive links for Explore visualizations to run queries related to presented data by setting up [correlations](https://grafana.com/docs/grafana/latest/administration/correlations/).
 
 ## Command to Run
 
