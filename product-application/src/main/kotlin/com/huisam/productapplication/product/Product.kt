@@ -12,10 +12,10 @@ class Product(
     @Id
     val id: Long,
 
-    @Column(name = "amount")
+    @Column(name = "amount", nullable = false)
     val amount: BigDecimal,
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     val name: String,
 ) {
     override fun equals(other: Any?): Boolean {

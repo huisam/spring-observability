@@ -11,13 +11,13 @@ class Order(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
-    @Column(name = "product_id")
+    @Column(name = "product_id", nullable = false, updatable = false)
     val productId: Long,
 
-    @Column(name = "order_date")
+    @Column(name = "order_date", nullable = false, updatable = false)
     val orderDate: ZonedDateTime,
 
-    @Column(name = "total_amount")
+    @Column(name = "total_amount", nullable = false)
     val totalAmount: BigDecimal
 ) {
     override fun equals(other: Any?): Boolean {
