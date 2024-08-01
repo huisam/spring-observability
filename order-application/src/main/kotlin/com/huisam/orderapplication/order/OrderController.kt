@@ -1,6 +1,7 @@
 package com.huisam.orderapplication.order
 
 import com.huisam.orderapplication.product.ProductClient
+import io.micrometer.observation.annotation.Observed
 import jakarta.validation.Valid
 import org.slf4j.LoggerFactory
 import org.springframework.data.repository.findByIdOrNull
@@ -27,6 +28,7 @@ class OrderController(
         return ResponseEntity.ok(order)
     }
 
+    @Observed(name = "order.place")
     @PostMapping("/place-order")
     fun placeOrder(@RequestBody @Valid request: PlaceOrderRequest): ResponseEntity<Order> {
         logger.info("Place order requested by id ${request.productId}")

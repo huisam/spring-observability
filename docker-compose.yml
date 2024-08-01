@@ -7,6 +7,7 @@ services:
       OTEL_RESOURCE_ATTRIBUTES: "service=order-application,env=dev"
       OTEL_EXPORTER_OTLP_ENDPOINT: "http://collector:4317"
       OTEL_EXPORTER_OTLP_PROTOCOL: grpc
+      OTEL_INSTRUMENTATION_MICROMETER_ENABLED: true
     ports:
       - "8080:8080"
     depends_on:
@@ -21,6 +22,7 @@ services:
       OTEL_RESOURCE_ATTRIBUTES: "service=product-application,env=dev"
       OTEL_EXPORTER_OTLP_ENDPOINT: "http://collector:4317"
       OTEL_EXPORTER_OTLP_PROTOCOL: grpc
+      OTEL_INSTRUMENTATION_MICROMETER_ENABLED: true
     ports:
       - "8081:8080"
     depends_on:
