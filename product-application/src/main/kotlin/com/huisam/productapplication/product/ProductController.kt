@@ -19,7 +19,7 @@ class ProductController(
 
     @GetMapping("/{id}")
     fun getProduct(@PathVariable id: Long): ResponseEntity<Product> {
-        logger.info("Get order requested by id $id")
+        logger.info("Get product requested by id $id")
 
         val product = productRepository.findByIdOrNull(id) ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
 
