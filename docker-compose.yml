@@ -114,3 +114,17 @@ services:
       POSTGRES_PASSWORD: password
     ports:
       - "5433:5432"
+
+  locust-master:
+    image: locustio/locust
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./locust/:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --master
+
+  locust-worker:
+    image: locustio/locust
+    volumes:
+      - ./locust/:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --worker --master-host locust-master
