@@ -45,8 +45,18 @@ datasources:
     uid: tempo
     jsonData:
       httpMethod: GET
+      tracesToMetrics:
+        datasourceUid: prometheus
+        tags: [ { key: 'service.name', value: 'job' }, { key: 'method' }, { key: 'uri' }, { key: 'outcome' }, { key: 'status' }, { key: 'exception' } ]
+        queries:
+          - name: 'Requests'
+            query: 'sum(rate(http_server_requests_seconds_count{$$__tags}[10m]))'
+        spanStartTimeShift: '-10m'
+        spanEndTimeShift: '10m'
       serviceMap:
         datasourceUid: prometheus
+      nodeGraph:
+        enabled: true
       tracesToLogsV2:
         datasourceUid: loki
         spanStartTimeShift: '-1h'
