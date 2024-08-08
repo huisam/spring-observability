@@ -57,3 +57,10 @@ Content-Type: application/json
   "productId": 1
 }
 ```
+
+## Performance Test
+
+Performance test is based on opensource [locust](https://docs.locust.io/en/stable/)
+
+You can run the performance test by access `locust-master` endpoint `8089` port.  
+Performance test script is located on [locustfile.py](locust/locustfile.py) you can customization own performance test scenario.  
