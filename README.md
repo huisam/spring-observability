@@ -1,6 +1,6 @@
 # Observability with spring boot application
 
-A demo for `observability` on spring boot framework with opentelemetry
+A demo for `observability` on spring boot with opentelemetry
 
 <div>
     <img src="img/spring-observability.png" text-align="center" />
