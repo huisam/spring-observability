@@ -34,7 +34,7 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    agent("io.opentelemetry.javaagent:opentelemetry-javaagent:2.6.0")
+    agent("io.opentelemetry.javaagent:opentelemetry-javaagent:2.7.0")
 }
 
 dependencyManagement {
