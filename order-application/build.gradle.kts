@@ -18,7 +18,7 @@ repositories {
 
 val agent = configurations.create("agent")
 
-extra["springCloudVersion"] = "2023.0.2"
+extra["springCloudVersion"] = "2023.0.3"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
