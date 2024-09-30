@@ -1,14 +1,8 @@
-import gradle.kotlin.dsl.accessors._b8a265932296deb6b8c2e61dc5dc689b.implementation
-import gradle.kotlin.dsl.accessors._b8a265932296deb6b8c2e61dc5dc689b.testImplementation
-import gradle.kotlin.dsl.accessors._b8a265932296deb6b8c2e61dc5dc689b.testRuntimeOnly
-import org.gradle.kotlin.dsl.extra
-
 plugins {
+    kotlin("jvm")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
 }
-
-extra["springCloudVersion"] = "2023.0.3"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -22,6 +16,8 @@ dependencies {
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
+
+extra["springCloudVersion"] = "2023.0.3"
 
 dependencyManagement {
     imports {
