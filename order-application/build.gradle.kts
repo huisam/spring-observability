@@ -1,5 +1,5 @@
 plugins {
-    id("common-conventions")
+    id("project-conventions")
     id("kotlin-conventions")
     id("spring-conventions")
     id("jib-conventions")
