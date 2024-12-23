@@ -17,7 +17,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-extra["springCloudVersion"] = "2023.0.4"
+extra["springCloudVersion"] = "2024.0.0"
 
 dependencyManagement {
     imports {
