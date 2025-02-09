@@ -8,3 +8,9 @@ plugins {
 dependencies {
     runtimeOnly("org.postgresql:postgresql")
 }
+
+jib {
+    container {
+        mainClass = "com.huisam.orderapplication.OrderApplicationKt"
+    }
+}

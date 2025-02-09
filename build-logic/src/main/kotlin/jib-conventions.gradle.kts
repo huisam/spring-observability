@@ -46,7 +46,6 @@ jib {
     }
 
     container {
-        mainClass = "com.huisam.orderapplication.OrderApplicationKt"
         jvmFlags = listOf(
             "-javaagent:/otelagent/opentelemetry-javaagent.jar"
         )
