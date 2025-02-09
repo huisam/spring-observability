@@ -6,7 +6,7 @@ plugins {
     id("com.google.cloud.tools.jib")
 }
 
-val agent = configurations.create("agent")
+val agent: Configuration = configurations.create("agent")
 
 dependencies {
     agent("io.opentelemetry.javaagent:opentelemetry-javaagent:2.12.0")

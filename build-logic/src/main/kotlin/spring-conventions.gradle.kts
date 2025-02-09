@@ -11,6 +11,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
 
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+    implementation("io.github.openfeign:feign-hc5")
     implementation("io.github.openfeign:feign-micrometer")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
