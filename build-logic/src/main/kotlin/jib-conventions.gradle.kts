@@ -9,7 +9,7 @@ plugins {
 val agent: Configuration = configurations.create("agent")
 
 dependencies {
-    agent("io.opentelemetry.javaagent:opentelemetry-javaagent:2.12.0")
+    agent("io.opentelemetry.javaagent:opentelemetry-javaagent:2.13.3")
 }
 
 val copyAgent = tasks.register<Copy>("copyAgent") {
