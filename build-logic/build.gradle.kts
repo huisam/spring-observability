@@ -13,5 +13,5 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.10")
     implementation("org.jetbrains.kotlin:kotlin-allopen:2.4.10")
     implementation("org.jetbrains.kotlin:kotlin-noarg:2.4.10")
-    implementation("com.google.cloud.tools:jib-gradle-plugin:3.5.2")
+    implementation("com.google.cloud.tools:jib-gradle-plugin:3.5.4")
 }
